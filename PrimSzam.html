@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="h">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prím szám</title>
+</head>
+
+<body>
+
+    <script>
+        //Ez az én általam kreált
+        function PrimekSzama(VizsgaltTomb) {
+            let primTomb = [];
+            let oszto = 0;
+            for (let k = 0; k <= VizsgaltTomb.length; k++) {
+                for (let i = 0; i <= VizsgaltTomb[k]; i++) {
+                    if (VizsgaltTomb[k] % i == 0) {
+                        oszto++;
+                    }
+                }
+                if (oszto == 2) {
+                    primTomb.push(VizsgaltTomb[k]);
+                }
+            }
+            return primTomb;
+        }
+        document.write(PrimekSzama([3, 7, 5]) + "<br><br>");
+
+
+        //Ez ahogy órán vettük
+        function PrimszamEV2(vizsgaltSzam) {
+            let oszto = 0;
+            let eredmeny;
+            for (let i = 0; i <= vizsgaltSzam; i++) {
+                if (vizsgaltSzam % i == 0) {
+                    oszto++;
+                }
+            }
+            if (oszto == 2) {
+                eredmeny = true;
+            }
+            else {
+                eredmeny = false;
+            }
+            return eredmeny;
+        }
+        document.write(PrimszamEV2(3) + "<br>");
+        document.write(PrimszamEV2(7) + "<br>");
+        document.write(PrimszamEV2(5) + "<br><br>");
+
+
+    </script>
+
+</html>
